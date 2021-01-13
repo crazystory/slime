@@ -1,0 +1,16 @@
+log:
+  default: stack
+
+  channels:
+    stack:
+      writer: stack
+      channels:
+        - "rotate"
+        - "std"
+
+    rotate:
+      writer: rotate
+      pattern: "storage/logs/slime-2006-01-02.log"
+
+    std:
+      writer: std
