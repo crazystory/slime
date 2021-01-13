@@ -28,7 +28,7 @@ func TestRotate(t *testing.T) {
 
 	channel, err := createChannel(`rotate`)
 	assert.NoError(t, err)
-	_, err = channel.Write([]byte(`test`))
+	_, err = channel.Write([]byte(`rotate`))
 
 	assert.NoError(t, err)
 
@@ -37,5 +37,5 @@ func TestRotate(t *testing.T) {
 
 	content, err := ioutil.ReadFile(filename)
 	assert.NoError(t, err)
-	assert.Equal(t, `stack log`, string(content))
+	assert.Equal(t, `rotate`, string(content))
 }
